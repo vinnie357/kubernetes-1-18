@@ -177,3 +177,33 @@ kubectl delete -f f5-k8s-ingress.yaml
 oc get pod -n kube-system
 oc log -f f5-server-### -n kube-system | grep -i 'as3'
 ```
+
+
+
+# optional
+
+runs from master
+    requires:
+
+        - BIG-IP mgmt address
+            192.168.2.100
+        - BIG-IP admin username
+            admin
+        - BIG-IP mgmt password
+            mypassword
+        - BIG-IP Node network self-IP
+            192.168.10.2
+        - BIG-IP Node network CIDR
+            24
+        - POD Network
+            10.233.100.0
+        - pod network CIDR
+            24
+        - BIG-IP POD network self-IP
+            10.233.100.2
+
+```bash
+
+. setup-flannel.sh
+
+```
